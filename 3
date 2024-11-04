@@ -1,12 +1,8 @@
 
 localStorage.Apikey = "oosama-22296912-33b9-a9e5-aa49-2023fc151f3d"
 
-    function loadCryptoJS(callback) {
-        var script = document.createElement('script');
-        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js';
-        script.onload = callback;
-        document.head.appendChild(script);
-    }
+  if(localStorage.CaptchaType == 'NoCaptchaAi' && localStorage.getItem('Captcha Login Auto Solve') == 'true' && localStorage.captchaautosolve == 'true' ){
+    
 
     function waitForElement(selector, callback) {
         const element = document.querySelector(selector);
@@ -22,10 +18,7 @@ localStorage.Apikey = "oosama-22296912-33b9-a9e5-aa49-2023fc151f3d"
    function solveCaptcha() {
    console.log("solveCaptcha function started.");
 
-        // Retrieve and decrypt the value from localStorage
-        const storedEncryptedValue = localStorage.getItem('CaptchaApikey');
-        const decryptedValue = CryptoJS.AES.decrypt(storedEncryptedValue, 'secret-passphrase').toString(CryptoJS.enc.Utf8);
-        //console.log('Decrypted Captcha API key:', decryptedValue);
+        
 
        // const captchaApikey = decryptedValue;
     const captchaApikey = localStorage.Apikey
@@ -75,7 +68,7 @@ localStorage.Apikey = "oosama-22296912-33b9-a9e5-aa49-2023fc151f3d"
     function setPassword(applicant) {
         $(':password:visible').val(applicant?.password);
     }
-
+    
     function getCaptchaTarget() {
         return $('.box-label')
             .sort((a, b) => getComputedStyle(b).zIndex - getComputedStyle(a).zIndex)
@@ -121,7 +114,7 @@ localStorage.Apikey = "oosama-22296912-33b9-a9e5-aa49-2023fc151f3d"
                 onError('captchaerror', result);
             }
         };
-
+        
         const onError = (type, data) => {
             console.error(type, data);
             $('.validation-summary-valid').html('<b>Failed to solve captcha.</b>');
@@ -158,7 +151,7 @@ localStorage.Apikey = "oosama-22296912-33b9-a9e5-aa49-2023fc151f3d"
        enableCopyPasteInInputs();
         const applicant = getActiveApplicant();
         setPassword(applicant);
-
+        
         waitForElement('.box-label', () => {
             if (localStorage.captchaautosolve === 'true' && localStorage.getItem('Captcha Visa Type Auto Solve') === 'true') {
                 solve();
@@ -166,14 +159,15 @@ localStorage.Apikey = "oosama-22296912-33b9-a9e5-aa49-2023fc151f3d"
         });
    }
     function start() {
-    loadCryptoJS(solveCaptcha);
+   // loadCryptoJS(solveCaptcha);
      var LoginAutoSolveCaptcha = localStorage.getItem('Captcha Login Auto Solve');
-
-
+        
+      
 if(localStorage.captchaautosolve == 'true' && LoginAutoSolveCaptcha == 'true'){
         solveCaptcha();
 }
-
-    }
-
+  
+    }   
+   
     start();
+}
