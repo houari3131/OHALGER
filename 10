@@ -1,0 +1,77 @@
+// Check if the body contains the specified phrase
+// document.body.innerText.includes("504 Gateway Time-out")
+var Temp1 = setInterval(function(){
+if (document.body.innerText.includes("Application Temporarily Unavailable") || 
+    document.body.innerText.includes("You have reached maximum number of requests from this account. Please try after sometime") ||
+    document.body.innerText.includes("Currently, no slots are available for the selected category. Kindly try again after sometime. Thank you for your patience") || 
+   document.body.innerText.includes("An error occured while processing your request. Please try again after sometime") || 
+  document.body.innerText.includes("All your ongoing appointments have been cleared. You can now schedule new appointment") ||
+  
+document.body.innerText.includes("We're sorry, something went wrong") ||
+document.body.innerText.includes("The appointment date and time you selected are already taken by other applicants. Please choose a different date and time.") || 
+document.body.innerText.includes("Invalid appointment request flow") || 
+document.body.innerText.includes("The appointment request is expired") || document.body.innerText.includes("Your previous payment request is still pending. Please complete the payment")) {
+    console.log("load to book appointment");
+    // Redirect to a new URL
+    window.location.href = 'https://algeria.blsspainglobal.com/DZA/appointment/newappointment';
+    clearInterval(Temp1)
+    
+} else {
+    console.log("The application is available.");
+}
+
+
+},1000)
+
+var Temp2 = setInterval(function(){
+if (document.body.innerText.includes("You have initiated an appointment from your account or IP address which is not yet completed. Would you like to disregard that appointment and start a new one?")){
+
+    
+    document.querySelector("#div-main > div:nth-child(2) > button").click();
+      clearInterval(Temp2)
+}
+
+},1000)
+
+var Temp3 = setInterval(function(){
+if (document.body.innerText.includes("Applicants who choose a category that does not match their visa history will not be accepted at the center, and the service fees will not be refunded.") || 
+    document.body.innerText.includes("exclusively for people whose last Schengen visa was obtained after 1 January 2020 and was valid for a period of six months or less") ||
+    document.body.innerText.includes("exclusively for people whose last Schengen visa was obtained after 1 January 2020 and was valid for more than six months and less than two years") ||
+   document.body.innerText.includes("exclusively for people whose last visa was obtained after 1 January 2020 and was valid for a period of two years or more") || 
+    document.body.innerText.includes("Exclusively for individuals who have never obtained a Schengen visa or whose Schengen visa was issued before 2020.") || 
+     document.body.innerText.includes("exclusively for people who have never obtained a Schengen visa or for people who obtained a Schengen visa before 2020") ||
+document.body.innerText.includes("Exclusively for individuals whose most recent Schengen visa was obtained after January 1, 2020, and was valid for a period of six months or less.") ||
+document.body.innerText.includes("Exclusively for individuals whose most recent Schengen visa was obtained after January 1, 2020, and was valid for more than six months but less than two years.") ||
+document.body.innerText.includes("Exclusively for individuals whose most recent visa was obtained after January 1, 2020, and was valid for a period of two years or more.") ||
+ document.body.innerText.includes("Premium Lounge is an optional service.") ){
+
+    
+document.querySelector("#VisaTypeModel > div > div > div.modal-footer > button.btn.btn-success").click();
+document.querySelector("#Alg1Visatype > div > div > div.modal-footer > button").click();
+document.querySelector("#Alg2Visatype > div > div > div.modal-footer > button").click();
+document.querySelector("#Alg3Visatype > div > div > div.modal-footer > button").click();
+document.querySelector("#Alg4Visatype > div > div > div.modal-footer > button").click();
+document.querySelector("#Oran1Visatype > div > div > div.modal-footer > button").click();
+document.querySelector("#Oran2Visatype > div > div > div.modal-footer > button").click();
+document.querySelector("#Oran3Visatype > div > div > div.modal-footer > button").click();
+document.querySelector("#Oran4Visatype > div > div > div.modal-footer > button").click();
+
+document.querySelector("#PremiumTypeModel > div > div > div.modal-footer > button.btn.btn-success").click();   
+
+
+}
+
+},100)
+
+var Temp4 = setInterval(function(){
+if(!window.location.href.includes("Payment?data") && !window.location.href.includes("livenes") && !window.location.href.includes("SlotSelection") && !window.location.href.includes("ApplicantSelection") ){
+if(document.body.innerText.includes("504 Gateway Time-out")){
+
+   window.location.href = 'https://www.blsspainmorocco.net/MAR/appointment/newappointment';
+    clearInterval(Temp4)
+
+}
+
+}
+
+},100)
