@@ -1098,7 +1098,7 @@ downloadFile();
                 success: function (response) {
                     HideLoader();
                     if (response != "" && response != null && response.success === true) {
-                        window.location.href = 'https://www.blsspainmorocco.net/MAR/appointment/newappointment';
+                        window.location.href = 'https://algeria.blsspainglobal.com/DZA/appointment/newappointment';
                     }
                 },
                 error: function (response) {
@@ -1293,6 +1293,7 @@ downloadFile();
         const cities = [
             { name: 'Oran', label: 'Oran' },
             { name: 'Algiers', label: 'Algiers' },
+            { name: 'Estonia', label: 'Estonia' },
 
         ];
 
