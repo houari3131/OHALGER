@@ -1,0 +1,53 @@
+document.querySelector("#termsmodal > div > div > div.modal-footer > button.btn.btn-primary").click()
+var MylocalStorage = localStorage.getItem('Auto Upload Photo');
+
+
+if(MylocalStorage=='true'){
+
+
+
+function img() {
+$("#ApplicantPhotoId").val(localStorage.photoId);
+       var imageUrl = "https://algeria.blsspainglobal.com/DZA/query/getfile?fileid=" + localStorage.photoId;
+        const fileInput = document.getElementById('uploadfile-1');
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", imageUrl, true);
+        xhr.responseType = "blob";
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                var blob = xhr.response;
+                var fd = new FormData();
+                fd.append('file', blob, "image.jpg");
+                $.ajax({
+                    url: "/MAR/query/uploadprofileImage",
+                    type: 'post',
+                    data: fd,
+                    contentType: false,
+                    processData: false,
+                    success: function(result) {
+                        if (result.success) {
+                            $("#uploadfile-1-preview").attr("src", "/MAR/query/getfile?fileid=" + result.fileId);
+                            $("#ApplicantPhotoId").val(result.fileId);
+                        } else {
+                            alert(result.err);
+                        }
+                    }
+                });
+            }
+            else if (xhr.status === 502) {
+               img();     
+            }
+             else if (xhr.status === 504) {
+               img();         
+       }
+            else {
+                alert("Failed to retrieve the image from the URL.");
+            }
+        };
+        if (imageUrl.length >= 1) {
+            xhr.send();
+        }
+}
+img();
+
+}
