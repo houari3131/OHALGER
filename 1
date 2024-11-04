@@ -513,15 +513,23 @@ var fields=[];
         }
 
         let options = [];
-        if(selectedCty === 'Algiers' || selectedCty === 'Oran'){
-        if (selectedVist === 'Schengen Visa') {
-            options = ['Schengen Visa'];
+        if(selectedCty === 'Algiers'){
+        if (selectedVist === 'Schengen visa ( Estonia)') {
+            options = ['Schengen visa ( Estonia)'];
 
-        } else if (selectedVist === 'National Visa' ) {
-            options = ['National Visa'];
+        } else if (selectedVist === 'First application / première demande' ) {
+            options = ['ALG 1'];
+        }else if(selectedVist === 'Visa renewal / renouvellement de visa'){
+            options = ['ALG 2','ALG 3','ALG 4'];
         }
     }
-
+   if(selectedCty === 'Oran'){
+       if (selectedVist === 'First application / première demande' ) {
+            options = ['Oran 1'];
+        }else if(selectedVist === 'Visa renewal / renouvellement de visa'){
+            options = ['Oran 2','Oran 3','Oran 4'];
+        }
+    }
 
 
         options.forEach(option => {
