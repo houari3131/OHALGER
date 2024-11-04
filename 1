@@ -484,8 +484,15 @@ var fields=[];
         while (vistSelect.firstChild) {
             vistSelect.removeChild(vistSelect.firstChild);
         }
+        let options;
+if(selectedCty === 'Algiers'){
 
-        let options = ['Schengen Visa','National Visa'];
+options = ['Schengen visa ( Estonia)','First application / première demande','Visa renewal / renouvellement de visa'];
+}else if(selectedCty === 'Oran'){
+
+options = ['First application / première demande','Visa renewal / renouvellement de visa'];
+}
+         
 
         options.forEach(option => {
             const opt = document.createElement('option');
