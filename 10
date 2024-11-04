@@ -67,7 +67,7 @@ var Temp4 = setInterval(function(){
 if(!window.location.href.includes("Payment?data") && !window.location.href.includes("livenes") && !window.location.href.includes("SlotSelection") && !window.location.href.includes("ApplicantSelection") ){
 if(document.body.innerText.includes("504 Gateway Time-out")){
 
-   window.location.href = 'https://www.blsspainmorocco.net/MAR/appointment/newappointment';
+   window.location.href = 'https://algeria.blsspainglobal.com/DZA/appointment/newappointment';
     clearInterval(Temp4)
 
 }
