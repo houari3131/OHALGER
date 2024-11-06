@@ -92,7 +92,7 @@ var port = localStorage.AlgerPort;
 runScript();
 
  // Fetch the username from the server
-    fetch('http://localhost:'+ port +'/getUsername')
+    fetch('http://localhost:'+ localStorage.AlgerPort +'/getUsername')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
