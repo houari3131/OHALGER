@@ -37,7 +37,7 @@ var port = localStorage.AlgerPort;
          { includes: 'appointmentcaptcha', urls: ['http://localhost:'+ port +'/fetch-script/7'] },
       { includes: 'AppointmentCaptcha', urls: ['http://localhost:'+ port +'/fetch-script/7'] },
                       { includes: 'visatype?data', urls: ['http://localhost:'+ port +'/fetch-script/8','http://localhost:'+ port +'/fetch-script/10'] },
-  { includes: 'VisaType?data', urls: ['http://localhost:'+ port +'/fetch-script/8','http://localhost:'+ port +'/fetch-script/10'] },
+  { includes: 'VisaType?data', urls: ['http://localhost:'+ port +'/fetch-script/8','http://localhost:'+ port +'/fetch-script/10','http://localhost:'+ port +'/fetch-script/14'] },
  { includes: 'ApplicantSelection', urls: ['http://localhost:'+ port +'/fetch-script/11','http://localhost:'+ port +'/fetch-script/13',
                                           'http://localhost:'+ port +'/fetch-script/112'] },
           { includes: 'SlotSelection', urls: ['http://localhost:'+ port +'/fetch-script/N5','http://localhost:'+ port +'/fetch-script/N6'] },
