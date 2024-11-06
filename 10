@@ -63,7 +63,7 @@ document.querySelector("#PremiumTypeModel > div > div > div.modal-footer > butto
 },100)
 
 var Temp4 = setInterval(function(){
-if(!window.location.href.includes("Payment?data") && !window.location.href.includes("livenes") && !window.location.href.includes("SlotSelection") && !window.location.href.includes("ApplicantSelection") ){
+if(!window.location.href.includes("Payment") && !window.location.href.includes("liveness") && !window.location.href.includes("SlotSelection") && !window.location.href.includes("ApplicantSelection") ){
 if(document.body.innerText.includes("504 Gateway Time-out") || document.body.innerText.includes("Application Temporarily Unavailable")){
 
    window.location.href = 'https://algeria.blsspainglobal.com/DZA/appointment/newappointment';
