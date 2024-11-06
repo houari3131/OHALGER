@@ -207,6 +207,7 @@
    var AgadirArray = getStoredDates('Agadir');
             var OranArray = getStoredDates('Oran');
             var AlgiersArray = getStoredDates('Algiers');
+            var EstoniaArray = getStoredDates('Estonia');
              var RandomDateOfRefrech;
              if (datevide == true) {
    
@@ -215,7 +216,11 @@
                       RandomDateOfRefrech = getRandomValue(OranArray);
                  }
                  if(localStorage.location == 'Algiers'){
-                      RandomDateOfRefrech = getRandomValue(AlgiersArray);
+                     if(localStorage.visatype == 'Schengen Visa (Estonia)'){
+                         RandomDateOfRefrech = getRandomValue(EstoniaArray);
+                     }else {
+                    
+                      RandomDateOfRefrech = getRandomValue(AlgiersArray); }
                  }
                    if(localStorage.location == 'Rabat'){
                       RandomDateOfRefrech = getRandomValue(RabatArray);
