@@ -1,0 +1,29 @@
+  const email = localStorage.getItem('email');
+    const password = localStorage.getItem('passwordOTP');
+    async function getOTPOnly() {
+        console.log("getONLY");
+        let otp = 0;
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+      var raw = JSON.stringify({
+            "email": email,
+            "password": password
+        });
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+        try {
+            const response = await fetch("http://localhost:" + localStorage.AlgerPort + "/otp2", requestOptions);
+            const result = await response.json();
+            otp = result;
+        } catch (error) {
+            console.error('Error:', error);
+        }
+        return otp;
+    }
+    var otp = await getOTPOnly(); // Fetching the OTP code
+        document.querySelector("#EmailCode").value = otp; // Automatically filling the OTP code
+    
