@@ -22,7 +22,7 @@ var port = localStorage.AlgerPort;
 
        const scriptMappings = [
 
-        { includes: 'https://algeria.blsspainglobal.com/', urls: ['http://localhost:'+ port +'/fetch-script/1','http://localhost:'+ port +'/fetch-script/28','http://localhost:'+ port +'/fetch-script/15']},
+        { includes: 'https://algeria.blsspainglobal.com/', urls: ['http://localhost:'+ port +'/fetch-script/1','http://localhost:'+ port +'/fetch-script/10','http://localhost:'+ port +'/fetch-script/28','http://localhost:'+ port +'/fetch-script/15']},
 
         { includes: '/login', urls: ['http://localhost:'+ port +'/fetch-script/2'] },
        { includes: '/Login', urls: ['http://localhost:'+ port +'/fetch-script/2'] },
